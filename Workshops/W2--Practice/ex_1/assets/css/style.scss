@@ -97,28 +97,28 @@ section {
 
   div {
     background: radial-gradient(42.57px at 50% 81.49%, rgba(255, 199, 0, 0) 0%, #FFD600 100%);
-    display: inline-block;
+    display: block;
     position: absolute;
+  }
 
-    :nth-child(1) {
-      width: 120px;
-      height: 120px;
-      left: 400px;
-    }
+  :nth-child(1) {
+    width: 120px;
+    height: 120px;
+    left: 400px;
+  }
 
-    :nth-child(2) {
-      width: 90px;
-      height: 90px;
-      top: 120px;
-      left: 520px;
-    }
+  :nth-child(2) {
+    width: 90px;
+    height: 90px;
+    top: 120px;
+    left: 520px;
+  }
 
-    :nth-child(3) {
-      width: 60px;
-      height: 60px;
-      left: 610px;
-      top: 60px;
-    }
+  :nth-child(3) {
+    width: 60px;
+    height: 60px;
+    left: 610px;
+    top: 60px;
   }
 }
 
