@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Media Languages Workshoip</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link href="https://fonts.googleapis.com/css?family=Jua:400" rel="stylesheet">
+
+	<style>
+		* { transition: all .3s; }
+
+		body {
+			font-family: Jua, sans-serif;
+			font-weight: 400;
+		}
+		.container {
+			background-color: #666;
+			transition: none;
+		}
+
+		.title {
+			position: absolute;
+			transform: translateY(-50%);
+			font-size: 20vw;
+			width: 100vw;
+			text-align: center;
+			color: lightpink;
+		}
+		.title-1 {
+			top: 20vh;
+		}
+		.title-2 {
+			top: 45vh;
+		}
+		.title-3 {
+			top: 80vh;
+		}
+
+		@media (min-height: 560px) {
+			.title {
+				/* outline: 1px solid red; */
+				width: 100vw;
+				height: 10vh;
+				font-size: 18vw;
+				transform: rotate(45deg);
+				text-align: left;
+			}
+			.title-1 {
+				top: 20vh;
+			}
+			.title-2 {
+				top: 35vh;
+			}
+			.title-3 {
+				top: 55vh;
+			}
+		}
+		@media (min-width: 800px) {
+			.title {
+				/* outline: 1px solid red; */
+				font-size: 8vw;
+				width: 33vw;
+				text-align: left;
+			}
+			.title-1 {
+				transform: translateY(-50%);
+				top: 50vh;
+				left: 4vw;
+			}
+			.title-2 {
+				transform: translateY(-50%);
+				top: 50vh;
+				left: 26vw;
+			}
+			.title-3 {
+				transform: translateY(-50%);
+				top: 50vh;
+				left: 64vw;
+			}
+		}
+		@media (min-width: 800px) and (min-height: 400px) {
+			.title {
+				width: 100vw;
+				font-size: 14vw;
+				text-align: center;
+				color: lightpink;
+			}
+			.title-1 {
+				left: 0;
+				top: 10vh;
+			}
+			.title-2 {
+				left: 0;
+				top: 35vh;
+			}
+			.title-3 {
+				left: 0;
+				top: 70vh;
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- every html element MUST be inside container -->
+		<div class="title title-1">Media</div>
+		<div class="title title-2">Languages</div>
+		<div class="title title-3">Workshop</div>
+
+
+
+	</div>
+
+</body>
+
+</html>
