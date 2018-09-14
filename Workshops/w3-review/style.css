@@ -44,7 +44,12 @@ table {
 }
 
 /* ========== Styles =========== */
-.box { position: absolute; }
+.box {
+  position: absolute;
+  border: 10px solid #fff;
+  z-index: 10;
+}
+
 .box-large {
   top: calc(50vh - 3.5vw);
   width: 7vw;
@@ -99,4 +104,17 @@ body {
 
 .container {
   max-width: 50%;
+}
+
+hr {
+  position: absolute;
+  left: 10vw;
+  right: 10vw;
+  top: calc(50vh - 1px);
+}
+
+@media(max-width: 800px) {
+  .box {
+    border-width: 6px;
+  }
 }
