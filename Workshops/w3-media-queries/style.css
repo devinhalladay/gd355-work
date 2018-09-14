@@ -1,0 +1,249 @@
+/* ========== Reset =========== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ========== Styles =========== */
+
+body {
+  font-family: "Neue Haas Unica Pro";
+  font-weight: 350;
+  color: #0E162D;
+}
+
+.container {
+  max-width: 64vw;
+  margin: auto;
+  padding-top: 4em;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.article-body {
+  max-width: 46vw;
+  margin: auto;
+  color: #383D4B;
+}
+
+.title {
+  font-size: 3.2em;
+  text-align: center;
+  line-height: .9;
+  font-family: "Recession"
+}
+
+.lead {
+  font-size: 1.4em;
+  line-height: 1.5;
+  text-align: center;
+  font-family: "Tranz Neue";
+  color: #909090;
+  text-shadow: 1px 1px #ffffff;
+}
+
+.title + .lead {
+  padding-top: 1em;
+}
+
+.lead + .article-body {
+  padding-top: 2em;
+}
+
+hr {
+  margin: 2em 0;
+  height: 2em;
+  border: none;
+  background: radial-gradient(#FF0000 0%, #0019FF 100%);
+  transform: rotate(.6deg);
+  transition: .2s all ease;
+}
+
+.papa {
+  max-width: 180px;
+  transform: rotate(1deg);
+  padding-bottom: 3em;
+  margin: auto;
+  display: block;
+  z-index: -10;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(#FF0000 0%, rgba(255, 255, 255, 10%) 100%);
+  border: 1px solid #FF0000;
+  box-sizing: border-box;
+  border-radius: 100px;
+  position: absolute;
+  z-index: 100;
+  transition: all .2s ease;
+}
+
+.circle:nth-child(1) {
+  top: 12vh;
+  left: 20vw;
+}
+
+.circle:nth-child(2) {
+  top: unset;
+  bottom: 10vh;
+  left: 80vw;
+}
+
+@media (max-width: 840px) {
+  .container {
+    max-width: 74vw;
+  }
+
+  .title {
+    font-size: 2.6em;
+    text-align: center;
+  }
+
+  .lead {
+    font-size: 1.1em;
+    line-height: 1.4;
+    text-align: center;
+    font-family: "Tranz Neue";
+  }
+
+  .article-body {
+    max-width: 70vw;
+  }
+
+  .circle {
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(#2D51CF 0%, rgba(255, 255, 255, 10%) 100%);
+    border-color: #2D51CF;
+  }
+
+  .circle:nth-child(1) {
+    top: 40vh;
+    left: calc(45vw - 80px);
+  }
+
+  .circle:nth-child(2) {
+    top: 40vh;
+    left: calc(55vw - 80px);
+  }
+
+  hr {
+    background: radial-gradient(#0ECF38 0%, #0019FF 100%);
+    transform: rotate(-.6deg);
+  }
+}
+
+
+@media (max-width: 550px) {
+  .container {
+    max-width: 90vw;
+  }
+
+  .article-body p {
+    font-size: .9em;
+    line-height: 1.7;
+  }
+
+  .title {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .lead {
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: center;
+    font-family: "Tranz Neue";
+  }
+
+  .article-body {
+    max-width: 80vw;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#FFC700 0%, rgba(255, 255, 255, 10%) 100%);
+    border-color: #FFC700;
+  }
+
+  .circle:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+
+  .circle:nth-child(2) {
+    top: unset;
+    left: unset;
+    right: 0;
+    bottom: 0;
+  }
+
+  hr {
+    transform: rotate(.9deg);
+    background: radial-gradient(#FFC700 0%, #0019FF 100%);
+  }
+}
+
+@media(max-height: 600px) {
+  hr {
+    height: 1.6em;
+  }
+
+  .circle {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+
+@media(max-height: 400px) {
+  hr {
+    height: 1.2em;
+  }
+
+  .circle {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
