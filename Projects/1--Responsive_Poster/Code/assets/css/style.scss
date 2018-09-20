@@ -1,3 +1,58 @@
-@include "reset";
-@include "fonts";
-@include "base";
+@import "reset";
+@import "fonts";
+@import "base";
+
+body {
+  font-family: "Spectral", "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.u--font-serif {
+  font-family: "Spectral", "Times New Roman", serif;
+}
+
+.u--font-sans {
+  font-family: "Neue Haas Unica Pro", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.container {
+  background-color: #666;
+  transition: none;
+}
+
+.title {
+  position: absolute;
+  transform: translateY(-50%);
+  font-size: 20vw;
+  width: 100vw;
+  text-align: center;
+  color: lightpink;
+}
+
+@media (min-height: 560px) {
+  .title {
+    /* outline: 1px solid red; */
+    width: 100vw;
+    height: 10vh;
+    font-size: 18vw;
+    transform: rotate(45deg);
+    text-align: left;
+  }
+}
+
+@media (min-width: 800px) {
+  .title {
+    font-size: 8vw;
+    width: 33vw;
+    text-align: left;
+  }
+}
+
+@media (min-width: 800px) and (min-height: 400px) {
+  .title {
+    width: 100vw;
+    font-size: 14vw;
+    text-align: center;
+    color: lightpink;
+  }
+}
