@@ -6,14 +6,8 @@
 .test, %test { outline: 1px solid red; }
 
 .wrapper {
-	display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+	margin: 0;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
+  min-height: 100vh;
   flex-direction: column;
-  height: 100%;
 }

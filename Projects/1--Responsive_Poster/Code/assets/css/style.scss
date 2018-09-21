@@ -34,7 +34,10 @@ body {
 .container {
   background-color: $white;
   display: flex;
-  flex-grow: 1;
+  position: relative;
+  width: 100vw;
+  flex: 1;
+  overflow: hidden;
 }
 
 section {
@@ -137,22 +140,4 @@ footer {
   .u-hide--landscape {
     display: none;
   }
-}
-
-
-//new styles
-
-.wrapper {
-  margin: 0;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.container {
-  display: flex;
-  position: relative;
-  width: 100vw;
-  flex: 1;
-  overflow: hidden;
 }
