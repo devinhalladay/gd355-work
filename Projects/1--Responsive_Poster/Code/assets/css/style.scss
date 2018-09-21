@@ -34,10 +34,10 @@ body {
 .container {
   background-color: $white;
   display: flex;
-  height: calc(100% - 70px);
+  flex-grow: 1;
 }
 
-.col {
+section {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
@@ -70,8 +70,6 @@ a {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   height: 70px;
   font-size: 22px;
@@ -100,17 +98,6 @@ footer {
   }
 }
 
-@media (min-height: 560px) {
-}
-
-@media (max-width: 800px) {
-
-}
-
-@media (min-width: 800px) and (min-height: 400px) {
-
-}
-
 @media (orientation: portrait) {
   .u-hide--portrait {
     display: none;
@@ -124,9 +111,10 @@ footer {
     flex-flow: column;
   }
 
-  .col {
+  section {
     flex-flow: wrap;
     justify-content: flex-start;
+    align-content: flex-start;
 
     &:not(:last-child) {
       border-right: inherit;
@@ -151,15 +139,20 @@ footer {
   }
 }
 
-// @media (max-width: 960px) {
-//   .col {
-//     p {
-//       font-size: 29px;
-//       line-height: 1.3;
-//     }
-//   }
-//
-//   footer {
-//     font-size: 18px;
-//   }
-// }
+
+//new styles
+
+.wrapper {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  flex: 1;
+  overflow: hidden;
+}
