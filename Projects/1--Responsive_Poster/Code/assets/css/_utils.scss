@@ -1,0 +1,17 @@
+// Typography helpers
+.u-font, %u-font {
+  // Font family helpers
+  &--serif { font-family: "Spectral", "Times New Roman", serif; }
+  &--sans { font-family: "Neue Haas Unica Pro", "Helvetica Neue", "Helvetica", sans-serif; }
+
+  // Text color helpers
+  &--color { color: $color; }
+  &--gray { color: $gray; }
+
+  // Text weights
+  &--300 { font-weight: 300; }
+  &--500 { font-weight: 500; }
+
+  // Text styles
+  &--italic { font-style: italic; }
+}

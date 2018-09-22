@@ -1,34 +1,13 @@
-@import "reset";
-@import "fonts";
-@import "base";
-
-$color: #f72e2a;
-$gray: #A3A3A3;
-$black: #000000;
-$white: #ffffff;
+@import "vars";
+@import "base/reset";
+@import "base/fonts";
+@import "base/base";
+@import "utils";
 
 body {
   font-family: "Spectral", "Times New Roman", serif;
   font-weight: 400;
   color: $black;
-}
-
-// Typography helpers
-.u-font, %u-font {
-  // Font family helpers
-  &--serif { font-family: "Spectral", "Times New Roman", serif; }
-  &--sans { font-family: "Neue Haas Unica Pro", "Helvetica Neue", "Helvetica", sans-serif; }
-
-  // Text color helpers
-  &--color { color: $color; }
-  &--gray { color: $gray; }
-
-  // Text weights
-  &--300 { font-weight: 300; }
-  &--500 { font-weight: 500; }
-
-  // Text styles
-  &--italic { font-style: italic; }
 }
 
 .container {
@@ -55,8 +34,8 @@ section {
   }
 
   p {
-    // font-size: calc(1.5vw + 1.5vh);
-    font-size: 2.1rem;
+    font-size: calc(1.5vw + 1.5vh);
+    // font-size: 2.1rem;
     line-height: 1.4;
     letter-spacing: -0.04em;
     display: block;
@@ -74,8 +53,8 @@ a {
 
 footer {
   width: 100%;
-  height: 70px;
-  font-size: 22px;
+  height: 10vh;
+  font-size: calc(1vw + 1vh);
   text-align: center;
   @extend %u-font--sans;
   display: flex;
