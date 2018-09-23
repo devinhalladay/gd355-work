@@ -13,16 +13,27 @@ var months = Info.months('long', {locale: 'en'});
 var totalDays = localDateTime.daysInMonth;
 
 for (var i = 0; i < months.length; i++) {
-  if (months[i-1] == electionDate.monthLong) {
-    console.log("Match: " + months[i] + " and " + electionDate.monthLong);
+  var electionMonth = parseInt(months.indexOf(electionDate.monthLong));
 
-    newElement.classList.add("u-font--color", "u-font--sans", "u-font--500");
+  if (electionMonth == i) {
     var newElement = document.createElement('p');
+    newElement.classList.add("u-font--color", "u-font--sans", "u-font--500");
+    newElement.id = months[i];
+    newElement.innerHTML = months[i] + ".";
+    $('.months').append(newElement);
+  } else if (i+1 < localDateTime.month) {
+    var newElement = document.createElement('p');
+    newElement.classList.add("u-font--gray");
+    newElement.id = months[i];
+    newElement.innerHTML = months[i];
+    $('.months').append(newElement);
+  } else if (i+1 == localDateTime.month) {
+    var newElement = document.createElement('p');
+    newElement.classList.add("u-font--italic");
     newElement.id = months[i];
     newElement.innerHTML = months[i];
     $('.months').append(newElement);
   } else {
-    // console.log('no match');
     var newElement = document.createElement('p');
     newElement.id = months[i];
     newElement.innerHTML = months[i];
@@ -31,10 +42,22 @@ for (var i = 0; i < months.length; i++) {
 }
 
 for (var i = 1; i <= totalDays; i++) {
+  console.log("Local day: " + localDateTime.day);
   if (i == electionDate.day) {
-    console.log("Match: " + totalDays[i] + " and " + electionDate.day);
     var newElement = document.createElement('p');
     newElement.classList.add("u-font--color", "u-font--sans", "u-font--500");
+    newElement.id = i;
+    newElement.innerHTML = i + ".";
+    $('.days').append(newElement);
+  } else if (i < localDateTime.day) {
+    var newElement = document.createElement('p');
+    newElement.classList.add("u-font--gray");
+    newElement.id = i;
+    newElement.innerHTML = i;
+    $('.days').append(newElement);
+  } else if (i == localDateTime.day) {
+    var newElement = document.createElement('p');
+    newElement.classList.add("u-font--italic");
     newElement.id = i;
     newElement.innerHTML = i;
     $('.days').append(newElement);
@@ -53,26 +76,38 @@ for (var i = 1; i <= months.length; i++) {
   // $('.actions').append(newElement);
 
   console.log(electionDate.month + " " + (parseInt(months.indexOf(electionDate.monthLong)) + 1) + " " + electionDate.month);
+  console.log("Datetime month: " + localDateTime.month + " / current iteration: " + i);
 
   if ((parseInt(months.indexOf(electionDate.monthLong)) + 1) == i) {
     var newElement = document.createElement('p');
     newElement.classList.add("u-font--color", "u-font--sans", "u-font--500");
     newElement.id = i;
-    newElement.innerHTML = "Participate";
+    newElement.innerHTML = "Vote.";
     $('.actions').append(newElement);
-  } else {
+  } else if (i < localDateTime.month) {
+    var newElement = document.createElement('p');
+    newElement.classList.add("u-font--gray");
+    newElement.id = i;
+    newElement.innerHTML = "Participate,";
+    $('.actions').append(newElement);
+  } else if (i > localDateTime.month && i !== 12) {
+    var newElement = document.createElement('p');
+    newElement.id = i;
+    newElement.innerHTML = "Participate,";
+    $('.actions').append(newElement);
+  } else if (i == 12) {
     var newElement = document.createElement('p');
     newElement.id = i;
     newElement.innerHTML = "Participate";
     $('.actions').append(newElement);
+  } else {
+    var newElement = document.createElement('p');
+    newElement.classList.add("u-font--italic");
+    newElement.id = i;
+    newElement.innerHTML = "Participate,";
+    $('.actions').append(newElement);
   }
 }
-
-
-// Add an elsif statement to set past dates as gray
-// elsif (parseInt(months.indexOf(electionDate.monthLong)) < i {
-//   newElement.classList.add("u-font--gray")
-// }
 
 // also, maybe a more efficient way of writing the above for loops is as while loops:
 // while (var i = 1; i <= 12; i++) {
