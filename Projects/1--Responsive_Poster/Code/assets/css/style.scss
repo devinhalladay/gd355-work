@@ -19,7 +19,7 @@ body {
   overflow: hidden;
 }
 
-.arrow {
+.arrow, .tiny-tagline-arrow, .tagline-arrow, .cta-arrow {
   path {
     stroke: #f72e2a;
     stroke-width: 2px;
@@ -170,7 +170,7 @@ footer {
   .arrow {
     path {
       stroke: #f72e2a;
-      stroke-width: .2vw;
+      stroke-width: .4vw;
     }
   }
 }
