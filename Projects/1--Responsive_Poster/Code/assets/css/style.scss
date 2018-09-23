@@ -25,27 +25,6 @@ body {
   }
 }
 
-.arrow-line {
-  // animation: arrow-line-extend-in 0.2s;
-  // d: path('M0 11.5H23');
-}
-
-.arrow-chevron {
-  // animation: arrow-chevron-slide-in 0.2s;
-  // d: path('M13 22L23.5072 11.5L13 1');
-}
-
-// .cta:hover {
-//   .arrow {
-//     .arrow-line {
-//       animation: arrow-line-extend-out 0.2s;
-//     }
-//
-//     .arrow-chevron {
-//       animation: arrow-chevron-slide-out 0.2s;
-//     }
-//   }
-// }
 
 .anim-chevron--in {
   animation: arrow-chevron-slide-in 0.2s;

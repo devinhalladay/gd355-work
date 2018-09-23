@@ -1,4 +1,3 @@
-// Get references to elements and controlling buttons
 var arrowLine = document.querySelector("#arrow-line");
 var arrowChevron = document.querySelector("#arrow-chevron");
 var arrowContainer = document.querySelector("#cta");
