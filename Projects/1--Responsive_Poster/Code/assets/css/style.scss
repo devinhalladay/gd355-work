@@ -19,6 +19,10 @@ body {
   overflow: hidden;
 }
 
+.tagline, .tagline-date, .tagline-cta {
+  display: none;
+}
+
 section {
   flex: 1;
   display: flex;
@@ -81,12 +85,12 @@ footer {
 }
 
 @media (orientation: portrait) {
-  .u-hide--portrait {
+  .months, .dates, .actions {
     display: none;
   }
 
-  .u-hide--landscape {
-    display: visible;
+  .tagline, .tagline-date, .tagline-cta {
+    display: flex;
   }
 
   .container {
@@ -112,11 +116,17 @@ footer {
 }
 
 @media (orientation: landscape) {
-  .u-hide--portrait {
-    display: visible;
+  .months, .dates, .actions {
+    display: flex;
+  }
+}
+
+@media (max-height: 600px) {
+  .months, .dates, .actions {
+    display: none;
   }
 
-  .u-hide--landscape {
-    display: none;
+  .tagline, .tagline-date, .tagline-cta {
+    display: flex;
   }
 }
