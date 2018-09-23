@@ -1,3 +1,4 @@
+// Arrow animation controllers
 var ctaArrowLine = document.querySelector("#cta-arrow-line");
 var ctaArrowChevron = document.querySelector("#cta-arrow-chevron");
 var ctaArrowContainer = document.querySelector("#cta");
@@ -54,3 +55,9 @@ tinyTaglineArrowContainer.onmouseout = function () {
   tinyTaglineArrowChevron.classList.add("anim-chevron--out");
   tinyTaglineArrowLine.classList.add("anim-line--out");
 };
+
+
+var DateTime = luxon.DateTime;
+var Info = luxon.Info;
+
+console.log(Info.months('long', {locale: 'en'}));
