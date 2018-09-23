@@ -8,7 +8,7 @@
 	<body class="site">
 		<div class="container">
 			<section class="months">
-				<p class="u-font--gray">January</p>
+				<!-- <p class="u-font--gray">January</p>
 				<p class="u-font--gray">February</p>
 				<p class="u-font--gray">March</p>
 				<p class="u-font--gray">April</p>
@@ -19,10 +19,10 @@
 				<p class="u-font--italic">September</p>
 				<p>October</p>
 				<p class="u-font--sans u-font--color u-font--500">November</p>
-				<p>December</p>
+				<p>December</p> -->
 			</section>
-			<section class="dates">
-				<p class="u-font--gray">1</p>
+			<section class="days dates">
+				<!-- <p class="u-font--gray">1</p>
 				<p class="u-font--gray">2</p>
 				<p class="u-font--gray">3</p>
 				<p class="u-font--gray">4</p>
@@ -52,10 +52,10 @@
 				<p>28</p>
 				<p>29</p>
 				<p>30</p>
-				<p>31</p>
+				<p>31</p> -->
 			</section>
 			<section class="actions">
-				<p class="u-font--gray">Participate,</p>
+				<!-- <p class="u-font--gray">Participate,</p>
 				<p class="u-font--gray">Participate,</p>
 				<p class="u-font--gray">Participate,</p>
 				<p class="u-font--gray">Participate,</p>
@@ -66,13 +66,13 @@
 				<p class="u-font--italic">Participate,</p>
 				<p>Participate,</p>
 				<p class="u-font--sans u-font--color u-font--500">Vote.</p>
-				<p>Participate</p>
+				<p>Participate</p> -->
 			</section>
 			<section class="tagline">
 				<p>Voting isn’t the only way to be political. Always participate.</p>
 			</section>
 			<section class="tagline-date">
-				<p>But on election day, make yourself heard. <span class="u-font--sans u-font--500">Cast your vote on <span class="u-font--color">November 6th</span>.</span></p>
+				<p>But on election day, make yourself heard. <span class="u-font--sans u-font--500">Cast your vote on <span class="u-font--color tagline-date-target"></span>.</span></p>
 			</section>
 			<section class="tagline-cta">
 				<p><a id="tagline-cta" class="u-font--sans u-font--500" href="#">Find your polling location.
@@ -83,7 +83,7 @@
 				</a></p>
 			</section>
 			<section class="tiny-tagline">
-				<p>Make yourself heard. <span class="u-font--sans u-font--500">Cast your vote on <span class="u-font--color">November 6th</span>.</p>
+				<p>Make yourself heard. <span class="u-font--sans u-font--500">Cast your vote on <span class="u-font--color tiny-tagline-date"></span>.</p>
 			</section>
 			<section class="tiny-cta u-font--sans">
 				<p><a id="tiny-tagline-cta" class="u-font--sans u-font--500" href="#">Find your polling location.
@@ -97,7 +97,7 @@
 		<footer>
 			<p>
 				<span class="u-font--serif u-font--300">Make yourself heard.</span> 
-				Cast your vote on November 6th. 
+				Cast your vote on <span class="footer-vote-date"></span>. 
 				<a href="#" id="cta" class="cta">
 					Find your polling location.
 					<svg class="arrow" width="80" height="23" viewBox="0 0 80 20" fill="none">
@@ -109,5 +109,11 @@
 		</footer>
 	</body>
 	
-	<script src="assets/js/main.js" charset="utf-8"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script src="assets/js/luxon.min.js" charset="utf-8"></script>
+	<script src="assets/js/scripts.js" charset="utf-8"></script>
+	<script src="assets/js/app.js" charset="utf-8"></script>
 </html>

@@ -1,3 +1,4 @@
+// Arrow animation controllers
 var ctaArrowLine = document.querySelector("#cta-arrow-line");
 var ctaArrowChevron = document.querySelector("#cta-arrow-chevron");
 var ctaArrowContainer = document.querySelector("#cta");

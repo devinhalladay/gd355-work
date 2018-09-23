@@ -5,8 +5,8 @@
   &--sans { font-family: "Neue Haas Unica Pro", "Helvetica Neue", "Helvetica", sans-serif; }
 
   // Text color helpers
-  &--color { color: $color; }
   &--gray { color: $gray; }
+  &--color { color: $color; }
 
   // Text weights
   &--300 { font-weight: 300; }
