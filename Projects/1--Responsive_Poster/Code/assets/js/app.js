@@ -12,6 +12,24 @@ var electionDate = DateTime.local(electionYear, electionMonth, electionDay);
 var months = Info.months('long', {locale: 'en'});
 var totalDays = localDateTime.daysInMonth;
 
+// function setLongVoteDate(el) {
+//   console.log(el);
+//   var longformDate = Object.assign({ month: 'long', day: 'numeric' });
+//   // targetEl.classList.add("u-font--color", "u-font--sans", "u-font--500");
+//   el.innerHTML = longformDate;
+// }
+
+function setLongVoteDate (e) {
+  var longformDate = Object.assign({ month: 'long', day: 'numeric' });
+  console.log($("."+e));
+  $("."+e).text(electionDate.toLocaleString(longformDate));
+}
+
+setLongVoteDate('footer-vote-date');
+setLongVoteDate('tagline-date-target');
+setLongVoteDate('tiny-tagline-date');
+
+
 for (var i = 0; i < months.length; i++) {
   var electionMonth = parseInt(months.indexOf(electionDate.monthLong));
 
