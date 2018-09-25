@@ -11,6 +11,10 @@ var tinyTaglineArrowLine = document.querySelector("#tiny-tagline-arrow-line");
 var tinyTaglineArrowChevron = document.querySelector("#tiny-tagline-arrow-chevron");
 var tinyTaglineArrowContainer = document.querySelector("#tiny-tagline-cta");
 
+var voteDayCardArrowLine = document.querySelector("#vote-day-card-arrow-line");
+var voteDayCardArrowChevron = document.querySelector("#vote-day-card-arrow-chevron");
+var voteDayCardArrowContainer = document.querySelector("#vote-day-card-cta");
+
 // CTA arrow
 ctaArrowContainer.onmouseover = function () {
   ctaArrowChevron.classList.remove("anim-chevron--out");
@@ -54,4 +58,19 @@ tinyTaglineArrowContainer.onmouseout = function () {
   tinyTaglineArrowLine.classList.remove("anim-line--in");
   tinyTaglineArrowChevron.classList.add("anim-chevron--out");
   tinyTaglineArrowLine.classList.add("anim-line--out");
+};
+
+//Vote day card arrow
+voteDayCardArrowContainer.onmouseover = function () {
+  voteDayCardArrowChevron.classList.remove("anim-chevron--out");
+  voteDayCardArrowLine.classList.remove("anim-line--out");
+  voteDayCardArrowChevron.classList.add("anim-chevron--in");
+  voteDayCardArrowLine.classList.add("anim-line--in");
+};
+
+voteDayCardArrowContainer.onmouseout = function () {
+  voteDayCardArrowChevron.classList.remove("anim-chevron--in");
+  voteDayCardArrowLine.classList.remove("anim-line--in");
+  voteDayCardArrowChevron.classList.add("anim-chevron--out");
+  voteDayCardArrowLine.classList.add("anim-line--out");
 };

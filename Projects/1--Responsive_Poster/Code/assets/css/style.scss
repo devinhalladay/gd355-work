@@ -17,9 +17,18 @@ body {
   width: 100vw;
   flex: 1;
   overflow: hidden;
+  border-top: 10px solid $color;
+  border-right: 10px solid $color;
+  border-left: 10px solid $color;
 }
 
-.arrow, .tiny-tagline-arrow, .tagline-arrow, .cta-arrow {
+.container,
+footer,
+.vote-day-card {
+  opacity: 0;
+}
+
+.arrow, .tiny-tagline-arrow, .tagline-arrow, .cta-arrow, .vote-day-card-arrow {
   path {
     stroke: #f72e2a;
     stroke-width: 2px;
@@ -114,8 +123,8 @@ section {
   flex-flow: column;
   justify-content: center;
 
-  &:not(:last-child) {
-    border-right: 1px solid $black;
+  &:not(:nth-child(3)) {
+    border-right: 1px solid $color;
   }
 
   p {
@@ -142,7 +151,6 @@ footer {
   font-size: calc(1.2em + 1vh);
   text-align: center;
   @extend %u-font--sans;
-  border-top: 1px solid $black;
   background-color: $color;
   color: $white;
   letter-spacing: -0.04em;
@@ -229,13 +237,32 @@ footer {
     }
 
     &:not(:last-child) {
-      border-right: inherit;
       border-bottom: 1px solid $black;
     }
 
     &.dates {
       p {
         flex: 0;
+      }
+    }
+  }
+}
+
+.vote-day-card {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  border: 10px solid $color !important;
+
+  p {
+    font-size: calc(3vw + 2.2vh) !important;
+
+    a {
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin: 0.2em;
       }
     }
   }
@@ -254,6 +281,10 @@ footer {
 
   .tagline, .tagline-date, .tagline-cta {
     display: flex;
+  }
+
+  .container {
+    border-bottom: 10px solid $color;
   }
 
   footer {

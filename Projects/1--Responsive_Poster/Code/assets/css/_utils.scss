@@ -15,3 +15,11 @@
   // Text styles
   &--italic { font-style: italic; }
 }
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-visible {
+  display: inherit !important;
+}
