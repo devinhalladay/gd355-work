@@ -12,16 +12,8 @@ var electionDate = DateTime.local(electionYear, electionMonth, electionDay);
 var months = Info.months('long', {locale: 'en'});
 var totalDays = localDateTime.daysInMonth;
 
-// function setLongVoteDate(el) {
-//   console.log(el);
-//   var longformDate = Object.assign({ month: 'long', day: 'numeric' });
-//   // targetEl.classList.add("u-font--color", "u-font--sans", "u-font--500");
-//   el.innerHTML = longformDate;
-// }
-
 function setLongVoteDate (e) {
   var longformDate = Object.assign({ month: 'long', day: 'numeric' });
-  console.log($("."+e));
   $("."+e).text(electionDate.toLocaleString(longformDate));
 }
 
@@ -47,7 +39,7 @@ for (var i = 0; i < months.length; i++) {
     $('.months').append(newElement);
   } else if (i+1 == localDateTime.month) {
     var newElement = document.createElement('p');
-    newElement.classList.add("u-font--italic");
+    newElement.classList.add("current-date");
     newElement.id = months[i];
     newElement.innerHTML = months[i];
     $('.months').append(newElement);
@@ -60,7 +52,6 @@ for (var i = 0; i < months.length; i++) {
 }
 
 for (var i = 1; i <= totalDays; i++) {
-  console.log("Local day: " + localDateTime.day);
   if (i == electionDate.day) {
     var newElement = document.createElement('p');
     newElement.classList.add("u-font--color", "u-font--sans", "u-font--500");
@@ -75,7 +66,7 @@ for (var i = 1; i <= totalDays; i++) {
     $('.days').append(newElement);
   } else if (i == localDateTime.day) {
     var newElement = document.createElement('p');
-    newElement.classList.add("u-font--italic");
+    newElement.classList.add("current-date");
     newElement.id = i;
     newElement.innerHTML = i;
     $('.days').append(newElement);
@@ -93,8 +84,8 @@ for (var i = 1; i <= months.length; i++) {
   // newElement.innerHTML = "Participate";
   // $('.actions').append(newElement);
 
-  console.log(electionDate.month + " " + (parseInt(months.indexOf(electionDate.monthLong)) + 1) + " " + electionDate.month);
-  console.log("Datetime month: " + localDateTime.month + " / current iteration: " + i);
+  // console.log(electionDate.month + " " + (parseInt(months.indexOf(electionDate.monthLong)) + 1) + " " + electionDate.month);
+  // console.log("Datetime month: " + localDateTime.month + " / current iteration: " + i);
 
   if ((parseInt(months.indexOf(electionDate.monthLong)) + 1) == i) {
     var newElement = document.createElement('p');
@@ -120,7 +111,7 @@ for (var i = 1; i <= months.length; i++) {
     $('.actions').append(newElement);
   } else {
     var newElement = document.createElement('p');
-    newElement.classList.add("u-font--italic");
+    newElement.classList.add("current-date");
     newElement.id = i;
     newElement.innerHTML = "Participate,";
     $('.actions').append(newElement);

@@ -26,6 +26,12 @@ body {
   }
 }
 
+.current-date {
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.7px;
+}
+
 
 .anim-chevron--in {
   animation: arrow-chevron-slide-in 0.2s;
@@ -113,7 +119,7 @@ section {
   }
 
   p {
-    font-size: calc(1.6vw + 1.6vh);
+    font-size: calc(1.4vw + 1.8vh);
     // font-size: 2.1rem;
     line-height: 1.4;
     letter-spacing: -0.04em;
@@ -132,21 +138,26 @@ a {
 
 footer {
   width: 100%;
-  padding: 1em 0;
-  font-size: calc(1vw + 1vh);
+  padding: 0.6em 0;
+  font-size: calc(1.2em + 1vh);
   text-align: center;
   @extend %u-font--sans;
   border-top: 1px solid $black;
-  background-color: $white;
+  background-color: $color;
+  color: $white;
   letter-spacing: -0.04em;
 
   .cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: $white;
 
     .arrow {
       padding-left: 0.3em;
+      path {
+        stroke: $white;
+      }
     }
   }
 }
@@ -170,8 +181,12 @@ footer {
   .arrow {
     path {
       stroke: #f72e2a;
-      stroke-width: .4vw;
+      stroke-width: 2px;
     }
+  }
+
+  section p {
+    font-size: calc(1.4vw + 2vh)
   }
 }
 
@@ -186,7 +201,6 @@ footer {
     font-size: calc(2.7vw + 2.7vh)
   }
 }
-
 
 @media (max-width: 730px) {
   .months, .dates, .actions {
@@ -210,6 +224,10 @@ footer {
     justify-content: flex-start;
     align-content: flex-start;
 
+    p {
+      font-size: calc(2.8vw + 2.6vh);
+    }
+
     &:not(:last-child) {
       border-right: inherit;
       border-bottom: 1px solid $black;
@@ -223,11 +241,11 @@ footer {
   }
 }
 
-@media (orientation: landscape) {
-  .months, .dates, .actions {
-    display: flex;
-  }
-}
+// @media (orientation: landscape) {
+//   .months, .dates, .actions {
+//     display: flex;
+//   }
+// }
 
 @media (max-height: 600px) {
   .months, .dates, .actions {
@@ -245,9 +263,25 @@ footer {
 
 @media (max-height: 330px) and (max-width: 440px) {
   section p {
-    font-size: calc(3.1vw + 3.1vh)
+    font-size: calc(3.6vw + 3.2vh)
   }
 
+  .tagline, .tagline-date, .tagline-cta {
+    display: none;
+  }
+
+  .tiny-tagline, .tiny-cta {
+    display: flex;
+  }
+}
+
+@media (max-height: 400px) {
+  section p {
+    font-size: calc(2.3vw + 2.4vh)
+  }
+}
+
+@media (max-height: 300px) {
   .tagline, .tagline-date, .tagline-cta {
     display: none;
   }
