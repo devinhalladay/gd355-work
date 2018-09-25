@@ -31,7 +31,7 @@ footer,
 .arrow, .tiny-tagline-arrow, .tagline-arrow, .cta-arrow, .vote-day-card-arrow {
   path {
     stroke: #f72e2a;
-    stroke-width: 2px;
+    stroke-width: calc(.2vw + .1vh);
   }
 }
 
@@ -320,4 +320,23 @@ footer {
   .tiny-tagline, .tiny-cta {
     display: flex;
   }
+}
+
+
+.ballot {
+  font-size: 2vw;
+  color: $color;
+  font-weight: 600;
+  @extend %u-font--sans;
+  line-height: 100px;
+  font-size: 120px;
+  text-align: center;
+  width: auto !important;
+  position: fixed;
+}
+
+.ballot-container {
+  position: absolute;
+    left: 0px;
+    top: 0px;
 }
