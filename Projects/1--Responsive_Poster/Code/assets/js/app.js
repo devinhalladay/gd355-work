@@ -24,95 +24,66 @@ setLongVoteDate('tiny-tagline-date');
 
 for (var i = 0; i < months.length; i++) {
   var electionMonth = parseInt(months.indexOf(electionDate.monthLong));
+  var newElement = document.createElement('p');
 
   if (electionMonth == i) {
-    var newElement = document.createElement('p');
     newElement.classList.add("u-font--color", "u-font--sans", "u-font--500");
-    newElement.id = months[i];
     newElement.innerHTML = months[i] + ".";
     $('.months').append(newElement);
   } else if (i+1 < localDateTime.month) {
-    var newElement = document.createElement('p');
     newElement.classList.add("u-font--gray");
-    newElement.id = months[i];
     newElement.innerHTML = months[i];
     $('.months').append(newElement);
   } else if (i+1 == localDateTime.month) {
-    var newElement = document.createElement('p');
     newElement.classList.add("current-date");
-    newElement.id = months[i];
     newElement.innerHTML = months[i];
     $('.months').append(newElement);
   } else {
-    var newElement = document.createElement('p');
-    newElement.id = months[i];
     newElement.innerHTML = months[i];
     $('.months').append(newElement);
   }
 }
 
 for (var i = 1; i <= totalDays; i++) {
+  var newElement = document.createElement('p');
+
   if (i == electionDate.day) {
-    var newElement = document.createElement('p');
     newElement.classList.add("u-font--color", "u-font--sans", "u-font--500");
-    newElement.id = i;
     newElement.innerHTML = i + ".";
     $('.days').append(newElement);
   } else if (i < localDateTime.day) {
-    var newElement = document.createElement('p');
     newElement.classList.add("u-font--gray");
-    newElement.id = i;
     newElement.innerHTML = i;
     $('.days').append(newElement);
   } else if (i == localDateTime.day) {
-    var newElement = document.createElement('p');
     newElement.classList.add("current-date");
-    newElement.id = i;
     newElement.innerHTML = i;
     $('.days').append(newElement);
   } else {
-    var newElement = document.createElement('p');
-    newElement.id = i;
     newElement.innerHTML = i;
     $('.days').append(newElement);
   }
 }
 
 for (var i = 1; i <= months.length; i++) {
-  // var newElement = document.createElement('p');
-  // newElement.id = i;
-  // newElement.innerHTML = "Participate";
-  // $('.actions').append(newElement);
-
-  // console.log(electionDate.month + " " + (parseInt(months.indexOf(electionDate.monthLong)) + 1) + " " + electionDate.month);
-  // console.log("Datetime month: " + localDateTime.month + " / current iteration: " + i);
+  var newElement = document.createElement('p');
 
   if ((parseInt(months.indexOf(electionDate.monthLong)) + 1) == i) {
-    var newElement = document.createElement('p');
     newElement.classList.add("u-font--color", "u-font--sans", "u-font--500");
-    newElement.id = i;
     newElement.innerHTML = "Vote.";
     $('.actions').append(newElement);
   } else if (i < localDateTime.month) {
-    var newElement = document.createElement('p');
     newElement.classList.add("u-font--gray");
-    newElement.id = i;
     newElement.innerHTML = "Participate,";
     $('.actions').append(newElement);
   } else if (i > localDateTime.month && i !== 12) {
-    var newElement = document.createElement('p');
-    newElement.id = i;
     newElement.innerHTML = "Participate,";
     $('.actions').append(newElement);
   } else if (i == 12) {
-    var newElement = document.createElement('p');
-    newElement.id = i;
     newElement.innerHTML = "Participate";
     $('.actions').append(newElement);
   } else {
-    var newElement = document.createElement('p');
     newElement.classList.add("current-date");
-    newElement.id = i;
     newElement.innerHTML = "Participate,";
     $('.actions').append(newElement);
   }
