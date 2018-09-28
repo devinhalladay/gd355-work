@@ -15,15 +15,13 @@
   @extend %u-font--sans;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 120px;
+  font-size: calc(4vw + 8vh);
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   background-color: $black;
   color: $white;
   width: fit-content;
   display: inline-block;
-  line-height: 110px;
-  height: 140px;
   position: absolute;
   -webkit-touch-callout: none; /* iOS Safari */
    -webkit-user-select: none; /* Safari */
@@ -73,6 +71,14 @@ a {
     stroke-width: calc(.2vw + 2px);
   }
 }
+//
+// @media (max-height: 580px) {
+//   .ballot {
+//     font-size: 80px;
+//     line-height: 70px;
+//     height: 100px;
+//   }
+// }
 
 .anim-chevron--in {
   animation: arrow-chevron-slide-in 0.2s;

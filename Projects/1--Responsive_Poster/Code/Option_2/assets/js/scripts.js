@@ -10,47 +10,55 @@ var rand_x=0;
 var rand_y=0;
 //temp
 
+function drawBallots() {
+  for (var i = 0; i < numBallots; i++) {
+    var $ballot = $("<div>", {
+      text: "Vote!",
+      "class": `ballot ballot-${i}`
+    });
 
-for (var i = 0; i < numBallots; i++) {
-  var $ballot = $("<div>", {
-    text: "Vote!",
-    "class": `ballot ballot-${i}`
+    $(".ballots").append($ballot);
+  }
+
+  $('.ballot').each(function() {
+    plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+    randAngle = Math.floor(Math.random()*70+50) * plusOrMinus;
+
+    degree += randAngle;
+
+    $(this).css({
+      'transform': 'rotate('+ degree +'deg)',
+      'left': Math.random() * ($('.ballots').width() - $(this).width()),
+      'bottom': Math.random() * ($('.ballots').height() - $(this).height())
+    });
   });
 
-  $(".ballots").append($ballot);
+  var $yourBallot = $("<div>", {
+    text: "Vote!",
+    "class": `ballot ballot-yours`
+  });
+
+  $(".ballots").append($yourBallot);
+
+  $('.ballot-yours').each(function() {
+    plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+    randAngle = Math.floor(Math.random()*70+50) * plusOrMinus;
+
+    degree += randAngle;
+
+    $(this).css({
+      'transform': 'rotate('+ degree +'deg)',
+      'left': Math.random() * ($('.ballots').width() - $(this).width()),
+      'bottom': Math.random() * ($('.ballots').height() - $(this).height())
+    });
+  });
 }
 
-$('.ballot').each(function() {
-  plusOrMinus = Math.random() < 0.5 ? -1 : 1;
-  randAngle = Math.floor(Math.random()*70+50) * plusOrMinus;
+drawBallots();
 
-  degree += randAngle;
-
-  $(this).css({
-    'transform': 'rotate('+ degree +'deg)',
-    'left': Math.random() * ($('.ballots').width() - $(this).width()),
-    'bottom': Math.random() * ($('.ballots').height() - $(this).height())
-  });
-});
-
-var $yourBallot = $("<div>", {
-  text: "Vote!",
-  "class": `ballot ballot-yours`
-});
-
-$(".ballots").append($yourBallot);
-
-$('.ballot-yours').each(function() {
-  plusOrMinus = Math.random() < 0.5 ? -1 : 1;
-  randAngle = Math.floor(Math.random()*70+50) * plusOrMinus;
-
-  degree += randAngle;
-
-  $(this).css({
-    'transform': 'rotate('+ degree +'deg)',
-    'left': Math.random() * ($('.ballots').width() - $(this).width()),
-    'bottom': Math.random() * ($('.ballots').height() - $(this).height())
-  });
+$( window ).resize(function() {
+  $('.ballots').empty();
+  drawBallots();
 });
 
 
