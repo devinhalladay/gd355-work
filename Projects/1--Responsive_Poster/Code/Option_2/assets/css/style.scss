@@ -3,3 +3,104 @@
 @import "base/fonts";
 @import "base/base";
 @import "utils";
+
+body {
+  // overflow: hidden;
+}
+
+p {
+  font-size: 90px;
+  line-height: 70;
+}
+
+.ballots {
+  height: 50vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.ballot {
+  font-family: sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 120px;
+  text-align: center;
+  padding: 20px;
+  background-color: $black;
+  color: $white;
+  width: fit-content;
+  display: inline-block;
+  bottom: 0;
+  line-height: 110px;
+  height: 140px;
+  position: absolute;
+}
+
+.arrow {
+  path {
+    stroke: #f72e2a;
+    stroke-width: calc(.2vw + .1vh);
+  }
+}
+
+.anim-chevron--in {
+  animation: arrow-chevron-slide-in 0.2s;
+  d: path('M68 22L78.5072 11.5L68 1');
+}
+
+.anim-chevron--out {
+  animation: arrow-chevron-slide-out 0.2s;
+  d: path('M13 22L23.5072 11.5L13 1');
+}
+
+.anim-line--in {
+  animation: arrow-line-extend-in 0.2s;
+  d: path('M0 11.5H77');
+}
+
+.anim-line--out {
+  animation: arrow-line-extend-out 0.2s;
+  d: path('M0 11.5H23');
+}
+
+@keyframes arrow-line-extend-out {
+  0% {
+    d: path('M0 11.5H77');
+  }
+
+  100% {
+    d: path('M0 11.5H23');
+  }
+}
+
+@keyframes arrow-chevron-slide-out {
+  0% {
+    d: path('M68 22L78.5072 11.5L68 1');
+  }
+
+  100% {
+    d: path('M13 22L23.5072 11.5L13 1');
+  }
+}
+
+@keyframes arrow-line-extend-in {
+  0% {
+    d: path('M0 11.5H23');
+  }
+
+  100% {
+    d: path('M0 11.5H77');
+  }
+}
+
+@keyframes arrow-chevron-slide-in {
+  0% {
+    d: path('M13 22L23.5072 11.5L13 1');
+  }
+
+  100% {
+    d: path('M68 22L78.5072 11.5L68 1');
+  }
+}
