@@ -56,19 +56,20 @@ $('.ballot-yours').each(function() {
 
 // Arrow animation
 var arrowLine = $('.arrow-line');
-var arrowChevron = $('.cta-arrow-chevron');
-var arrowContainer = $('.cta');
+var arrowChevron = $('.arrow-chevron');
 
-arrowContainer.onmouseover = function () {
-  arrowChevron.classList.remove("anim-chevron--out");
-  arrowLine.classList.remove("anim-line--out");
-  arrowChevron.classList.add("anim-chevron--in");
-  arrowLine.classList.add("anim-line--in");
-};
+$('.cta').mouseenter(function() {
+  arrowChevron.removeClass("anim-chevron--out");
+  arrowLine.removeClass("anim-line--out");
+  arrowChevron.addClass("anim-chevron--in");
+  arrowLine.addClass("anim-line--in");
+  console.log('mousein');
+});
 
-arrowContainer.onmouseout = function () {
-  arrowChevron.classList.remove("anim-chevron--in");
-  arrowLine.classList.remove("anim-line--in");
-  arrowChevron.classList.add("anim-chevron--out");
-  arrowLine.classList.add("anim-line--out");
-};
+$('.cta').mouseout(function() {
+  arrowChevron.removeClass("anim-chevron--in");
+  arrowLine.removeClass("anim-line--in");
+  arrowChevron.addClass("anim-chevron--out");
+  arrowLine.addClass("anim-line--out");
+  console.log('mouseout');
+});

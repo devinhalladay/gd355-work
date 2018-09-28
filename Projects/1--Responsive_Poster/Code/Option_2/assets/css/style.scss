@@ -4,15 +4,6 @@
 @import "base/base";
 @import "utils";
 
-body {
-  // overflow: hidden;
-}
-
-p {
-  font-size: 90px;
-  line-height: 70;
-}
-
 .ballots {
   position: fixed;
   bottom: -40px;
@@ -21,7 +12,7 @@ p {
 }
 
 .ballot {
-  font-family: sans-serif;
+  @extend %u-font--sans;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 120px;
@@ -47,10 +38,39 @@ p {
   }
 }
 
+a {
+  @extend %u-font--sans;
+  color: $color;
+
+  &.cta {
+    display: flex;
+    align-items: center;
+    font-size: calc(2.8vw + 1.2vh);
+    @extend %u-font--400;
+    letter-spacing: -.5px;
+    padding-top: .5em;
+    z-index: 1000;
+  }
+}
+
+.content {
+  @extend %u-font--sans;
+  padding: 40px;
+
+  p {
+    font-size: calc(3.6vw + 2vh);
+    font-weight: 200;
+    letter-spacing:  -1.5px;
+    line-height: 1em;
+  }
+}
+
 .arrow {
+  padding-left: 15px;
+
   path {
-    stroke: #f72e2a;
-    stroke-width: calc(.2vw + .1vh);
+    stroke: $color;
+    stroke-width: calc(.2vw + 2px);
   }
 }
 
