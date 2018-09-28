@@ -12,15 +12,35 @@ var rand_y=0;
 
 
 for (var i = 0; i < numBallots; i++) {
-  var $div = $("<div>", {
+  var $ballot = $("<div>", {
     text: "Vote!",
     "class": `ballot ballot-${i}`
   });
 
-  $(".ballots").append($div);
+  $(".ballots").append($ballot);
 }
 
 $('.ballot').each(function() {
+  plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+  randAngle = Math.floor(Math.random()*70+50) * plusOrMinus;
+
+  degree += randAngle;
+
+  $(this).css({
+    'transform': 'rotate('+ degree +'deg)',
+    'left': Math.random() * ($('.ballots').width() - $(this).width()),
+    'bottom': Math.random() * ($('.ballots').height() - $(this).height())
+  });
+});
+
+var $yourBallot = $("<div>", {
+  text: "Vote!",
+  "class": `ballot ballot-yours`
+});
+
+$(".ballots").append($yourBallot);
+
+$('.ballot-yours').each(function() {
   plusOrMinus = Math.random() < 0.5 ? -1 : 1;
   randAngle = Math.floor(Math.random()*70+50) * plusOrMinus;
 
