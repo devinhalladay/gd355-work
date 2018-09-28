@@ -24,11 +24,9 @@ setLongVoteDate('tiny-tagline-date');
 if ((localDateTime.month == electionDate.month) && (localDateTime.day == electionDate.day)) {
   $(".container").remove();
   $("footer").remove();
-  $(".vote-day-card").fadeTo(1200, 1);
+  $(".vote-day-card").fadeTo(1000, 1);
 } else {
   $(".vote-day-card").remove();
-  $(".container").fadeTo(1200, 1);
-  $("footer").fadeTo(1200, 1);
 
   // Months section
   for (var i = 0; i < months.length; i++) {
@@ -114,14 +112,3 @@ if ((localDateTime.month == electionDate.month) && (localDateTime.day == electio
     $('.actions').append(newElement);
   }
 }
-
-// also, maybe a more efficient way of writing the above for loops is as while loops:
-// while (var i = 1; i <= 12; i++) {
-//   newElement.classList.add("u-font--gray");
-//   if (i === (parseInt(months.indexOf(electionDate.monthLong)) + 1)) {
-//     console.log("We've hit the current date");
-//     newElement.classList.add("u-font--color", "u-font--sans", "u-font--500");
-//     break;
-//   }
-//   // every element after this in the array will not receive a class from this function.
-// }

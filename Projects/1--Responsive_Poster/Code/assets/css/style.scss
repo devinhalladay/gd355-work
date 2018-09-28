@@ -8,6 +8,13 @@ body {
   font-family: "Spectral", "Times New Roman", serif;
   font-weight: 400;
   color: $black;
+  opacity: 1;
+  transition: 1.1s opacity;
+
+  &.fade {
+    opacity: 0;
+    transition: none;
+  }
 }
 
 .container {
@@ -22,8 +29,6 @@ body {
   border-left: 10px solid $color;
 }
 
-.container,
-footer,
 .vote-day-card {
   opacity: 0;
 }
@@ -102,9 +107,14 @@ footer,
   }
 }
 
-.tiny-tagline, .tiny-cta {
+.tiny-tagline {
   display: none;
   align-items: center;
+  align-content: center;
+
+  p {
+    font-size: calc(3.1vw + 5vh);
+  }
 }
 
 .tagline, .tagline-date, .tagline-cta {
@@ -128,7 +138,7 @@ section {
   }
 
   p {
-    font-size: calc(1.4vw + 1.8vh);
+    font-size: calc(1vw + 2.6vh);
     // font-size: 2.1rem;
     line-height: 1.4;
     letter-spacing: -0.04em;
@@ -194,7 +204,7 @@ footer {
   }
 
   section p {
-    font-size: calc(1.4vw + 2vh)
+    font-size: calc(1.4vw + 2vh);
   }
 }
 
@@ -224,7 +234,8 @@ footer {
   }
 
   footer {
-    display: none;
+    // !important to override js styling
+    display: none !important;
   }
 
   section {
@@ -287,21 +298,30 @@ footer {
     border-bottom: 10px solid $color;
   }
 
+  section p {
+    font-size: calc(2vw + 2.2vh)
+  }
+
   footer {
-    display: none;
+    // Using !important to override js styles :(
+    display: none !important;
   }
 }
 
 @media (max-height: 330px) and (max-width: 440px) {
-  section p {
-    font-size: calc(3.6vw + 3.2vh)
+  section {
+    padding: 10px 20px;
+
+    p {
+      font-size: calc(3.6vw + 3.2vh)
+    }
   }
 
   .tagline, .tagline-date, .tagline-cta {
     display: none;
   }
 
-  .tiny-tagline, .tiny-cta {
+  .tiny-tagline {
     display: flex;
   }
 }
@@ -317,7 +337,7 @@ footer {
     display: none;
   }
 
-  .tiny-tagline, .tiny-cta {
+  .tiny-tagline {
     display: flex;
   }
 }
