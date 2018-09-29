@@ -46,6 +46,18 @@ right: 0;
   }
 }
 
+body {
+  opacity: 1;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
+}
+
+body.fade {
+    opacity: 0;
+    -webkit-transition: none;
+    transition: none;
+}
+
 a {
   @extend %u-font--sans;
   color: $color;

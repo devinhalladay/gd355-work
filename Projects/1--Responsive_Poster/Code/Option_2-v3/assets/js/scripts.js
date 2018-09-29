@@ -11,9 +11,9 @@ function rotateBallots() {
 
     $(this).css({
       // 'transform': 'rotate('+ degree +'deg)',
-      'top': '3em',
+      'top': `${getRandomArbitrary(1.8, 2.9)}em`,
       'left': Math.random() * ($('.ballots').width() - $(this).width()),
-      'transform': `scale(${getRandomArbitrary(0.4, 1)})`
+      // 'transform': `scale(${getRandomArbitrary(0.4, 1)})`
       // 'bottom': Math.random() * ($('.ballots').height() - $(this).height())
     });
   });

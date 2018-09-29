@@ -8,6 +8,9 @@
 	</head>
 
 	<body class="site">
+		<script>
+		  document.body.classList.add('fade');
+		</script>
 		<div class="container">
 			<section class="content">
 				<p>
@@ -94,12 +97,13 @@
 			</section>
 		</div>
 	</body>
-
+	
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="assets/js/jquery.box2d.js" charset="utf-8"></script>
 	<script> 
 	$(document).ready(function() {  
 		$(".ballot").box2d({'y-velocity':30});
+		document.body.classList.remove('fade');
 	});
 	</script>
 	<script src="assets/js/scripts.js" charset="utf-8"></script>
