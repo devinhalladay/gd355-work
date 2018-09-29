@@ -28,6 +28,7 @@ right: 0;
   text-align: center;
   padding: 10px;
   color: $black;
+  // line-height: 0;
   // width: fit-content;
   display: inline-block;
   position: absolute;
@@ -40,6 +41,8 @@ right: 0;
 
   &-yours {
     color: $color;
+    font-size: calc(6vw + 2.1vh);
+    margin-top: -2em;
   }
 }
 
