@@ -1,4 +1,22 @@
 var degree = 0;
+var numBallots = 30;
+
+if (window.matchMedia("(max-width: 800px)").matches) {
+  numBallots = 20;
+} else {
+  /* the viewport is less than 400 pixels wide */
+}
+
+for (var i = 0; i < numBallots; i++) {
+  var $ballot = $("<div>", {
+    text: "Vote.",
+    "class": `ballot ballot-${i}`
+  });
+
+  $(".ballots").append($ballot);
+}
+
+console.log($('.ballot').length);
 
 function rotateBallots() {
   $('.ballot').each(function() {
@@ -18,6 +36,25 @@ function rotateBallots() {
     });
   });
 }
+
+var $yourBallot = $("<div>", {
+  text: "Vote.",
+  "class": `ballot ballot-yours`
+});
+
+$(".ballots").append($yourBallot);
+
+$('.ballot-yours').each(function() {
+  plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+  randAngle = Math.floor(Math.random()*70+50) * plusOrMinus;
+
+  degree += randAngle;
+
+  $(this).css({
+    'top': `${getRandomArbitrary(1.8, 2.9)}em`,
+    'left': Math.random() * ($('.ballots').width() - $(this).width()),
+  });
+});
 
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
@@ -39,7 +76,6 @@ $('.cta').mouseenter(function() {
   arrowLine.removeClass("anim-line--out");
   arrowChevron.addClass("anim-chevron--in");
   arrowLine.addClass("anim-line--in");
-  console.log('mousein');
 });
 
 $('.cta').mouseout(function() {
@@ -47,5 +83,4 @@ $('.cta').mouseout(function() {
   arrowLine.removeClass("anim-line--in");
   arrowChevron.addClass("anim-chevron--out");
   arrowLine.addClass("anim-line--out");
-  console.log('mouseout');
 });

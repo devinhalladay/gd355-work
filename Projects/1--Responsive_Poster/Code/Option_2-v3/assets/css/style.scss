@@ -24,7 +24,7 @@ right: 0;
   @extend %u-font--sans;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: calc(2.6vw + 2vh);
+  font-size: calc(4vw + 2.2vh);
   text-align: center;
   padding: 10px;
   color: $black;
@@ -73,13 +73,14 @@ a {
     @extend %u-font--400;
     letter-spacing: -.5px;
     padding-top: .5em;
-    z-index: 1000;
+    line-height: 1;
   }
 }
 
 .content {
   @extend %u-font--sans;
   padding: 80px;
+  z-index: 10000;
 
   p {
     font-size: calc(3.6vw + 2vh);
@@ -97,6 +98,47 @@ a {
     stroke-width: calc(.2vw + 2px);
   }
 }
+
+@media (max-width: 1100px) {
+  .content p {
+    font-size: calc(4.4vw + 2.6vh);
+  }
+
+  a.cta {
+    font-size: calc(3vw + 1.6vh);
+  }
+
+  .ballot {
+    font-size: calc(4.9vw + 2.8vh);
+
+    &-yours {
+      font-size: calc(6.7vw + 3.6vh);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .content  {
+    padding: 40px;
+
+    p {
+      font-size: calc(5.2vw + 3.6vh);
+    }
+  }
+
+  a.cta {
+    font-size: calc(2.6vw + 1.8vh);
+  }
+
+  .ballot {
+    font-size: calc(6vw + 2.8vh);
+
+    &-yours {
+      font-size: calc(7.6vw + 3.6vh);
+    }
+  }
+}
+
 //
 // @media (max-height: 580px) {
 //   .ballot {

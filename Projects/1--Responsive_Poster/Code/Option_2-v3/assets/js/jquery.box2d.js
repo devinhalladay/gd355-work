@@ -635,11 +635,11 @@ K.moveTo(G.position.x*y,G.position.y*y);K.lineTo((G.position.x+this.m_xformScale
 
   default_static = false;
 
-  default_density = 3;
+  default_density = 1;
 
-  default_friction = 1;
+  default_friction = .2;
 
-  default_restitution = 0.8;
+  default_restitution = 1.2;
 
   default_shape = 'box';
 
