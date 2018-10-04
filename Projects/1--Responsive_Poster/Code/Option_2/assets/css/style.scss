@@ -48,6 +48,10 @@ a {
     letter-spacing: -.5px;
     padding-top: .5em;
     z-index: 1000;
+
+    @media (max-width: 830px) {
+      font-size: calc(3.1vw + 1.5vh);
+    }
   }
 }
 
@@ -56,10 +60,14 @@ a {
   padding: 40px;
 
   p {
-    font-size: calc(3.6vw + 2vh);
+    font-size: calc(3.7vw + 2vh);
     font-weight: 200;
     letter-spacing:  -1.5px;
     line-height: 1em;
+
+    @media (max-width: 830px) {
+      font-size: calc(5.5vw + 2vh);
+    }
   }
 }
 

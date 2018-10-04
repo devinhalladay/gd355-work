@@ -18,7 +18,9 @@
   &--italic { font-style: italic; }
 
   // Sizes
-  &--smaller { font-size: 0.94em; }
+  &--smaller {
+    font-size: 0.94em;
+  }
 }
 
 .u-hidden {
