@@ -1,0 +1,105 @@
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
+	<script src="./p5.speech.js"></script>
+	<script>
+
+	var myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
+	myRec.continuous = true; // do continuous recognition
+	myRec.interimResults = true; // allow partial recognition (faster, less accurate)
+
+	var x, y;
+	var dx, dy;
+	var r, g, b;
+
+	function setup()
+	{
+		createCanvas(windowWidth, windowHeight);
+		background(255, 255, 255);
+		x = width/2;
+		y = height/2;
+		dx = 0;
+		dy = 0;
+		r = 0;
+		g = 0;
+		b = 0;
+
+		myRec.start(); // start engine
+	}
+
+	function draw()
+	{
+		// background(255);
+		// push();
+		noFill();
+		stroke(r, g, b);
+		ellipse(width/2, height/2, x, y);
+		
+		// push();
+		// fill(255);
+		// // stroke(0);
+		// ellipse(width/2, height/2, x, y);
+		// pop();
+		// pop();
+		
+		push();
+		fill(0);
+		textSize(20);
+		noStroke();
+		text("Say: Up, Down, Left, Right, Diagonal, Black, Red, Blue, Yellow, Green.", 20, height-20);
+		pop();
+		
+		x+=dx;
+		y+=dy;
+		if(x<0) x = width;
+		if(y<0) y = height;
+		if(x>width) x = 0;
+		if(y>height) y = 0;
+	}
+
+	function parseResult()
+	{
+		// recognition system will often append words into phrases.
+		// so hack here is to only use the last word:
+		// var mostrecentword = myRec.resultString.split(' ').pop();
+		var mostrecentword = myRec.resultString;
+		if(mostrecentword.indexOf("left")!==-1) { dx=-1;dy=0; }
+		else if(mostrecentword.indexOf("right")!==-1) { dx=1;dy=0; }
+		else if (mostrecentword.indexOf("diagonal")!==-1) { dx=1;dy=1 }
+		else if(mostrecentword.indexOf("up")!==-1) { dx=0;dy=-1; }
+		else if(mostrecentword.indexOf("down")!==-1) { dx=0;dy=1; }
+		else if(mostrecentword.indexOf("clear")!==-1) { background(255); }
+		else if(mostrecentword.indexOf("red")!==-1) {
+			r = 255;
+			g = 0;
+			b = 0;
+		}
+		else if(mostrecentword.indexOf("black")!==-1) {
+			r = 0;
+			g = 0;
+			b = 0;
+		}
+		else if(mostrecentword.indexOf("blue")!==-1) {
+			r = 0;
+			g = 0;
+			b = 255;
+		}
+		else if(mostrecentword.indexOf("yellow")!==-1) {
+			r = 255;
+			g = 255;
+			b = 0;
+		}
+		else if(mostrecentword.indexOf("green")!==-1) {
+			r = 0;
+			g = 255;
+			b = 0;
+		}
+		console.log(mostrecentword);
+	}
+
+</script>
+</head>
+<body>
+</body>
+</html>
