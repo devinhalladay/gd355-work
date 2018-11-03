@@ -1,0 +1,111 @@
+$font-sans: 'ibm-plex-sans', -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
+  "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
+  "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
+  "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+$font-mono: 'ibm-plex-mono', $font-sans;
+$color-orange: #ff8b3a;
+$color-blue: #67d2ff;
+$color-bg: #222830;
+
+@import 'dracula';
+
+body {
+  background-color: $color-bg;
+  color: #f9ffee;
+  font-family: $font-sans;
+  text-align: center;
+}
+
+iframe {
+  border: 0;
+  width: 500px;
+  height: 500px;
+
+  body {
+    padding: 0;
+  }
+}
+
+a {
+  color: $color-orange
+}
+
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 .9rem;
+  position: relative;
+  text-align: left;
+  padding-bottom: 100px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.2;
+  margin-top: .4em;
+  margin-bottom: .2em;
+  font-weight: 200;
+  font-family: $font-mono;
+  color: $color-orange;
+  text-align: center;
+}
+
+h2.author {
+  font-weight: 300;
+  font-family: $font-mono;
+  text-align: center;
+  color: rgba(white, 0.6);
+  font-size: 1.2em;
+}
+
+h2 {
+  font-weight: 400;
+  color: $color-orange;
+  padding-top: 1em;
+}
+
+h3 {
+  padding-top: 1.4em;
+}
+
+li {
+  padding-bottom: 0.6em;
+}
+
+p {
+  font-size: 18px;
+  text-align: left;
+  line-height: 1.7em;
+}
+
+blockquote {
+  margin-left: 0;
+  border-left: 3px solid $color-orange;
+  padding-left: 20px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+code {
+  white-space: pre-wrap;
+  font-family: $font-mono;
+  color: $color-blue;
+  background: darken($color-bg, 5%);
+  border-radius: 4px;
+  padding: 0px 6px 4px;
+}
+
+pre {
+  background: darken($color-bg, 5%);
+  padding: 5px 20px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.08), 0px 0px 4px rgba(0,0,0,0.05);
+  font-size: 1.2em;
+  border-radius: 4px;
+  overflow: auto;
+
+  code {
+    background: none;
+    padding: 0;
+    padding: 1em 1.5em;
+  }
+}
