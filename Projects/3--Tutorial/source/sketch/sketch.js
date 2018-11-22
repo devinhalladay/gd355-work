@@ -1,4 +1,4 @@
-var words = ["p", "five", "is", "awesome"]; // A list of words
+var words = ["p", "five", "is", "awesome", "okay"]; // A list of words
 var counter = 0; // A counter for the words
 var myVoice = new p5.Speech(); // Instantiate p5.Speech
 
